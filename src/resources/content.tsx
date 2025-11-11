@@ -119,7 +119,7 @@ const about: About = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/betterlyrics/banner.png",
+            src: "https://github.com/jayfunc/BetterLyrics/blob/dev/Promotion/banner.png?raw=true",
             alt: "Project",
             width: 16,
             height: 9,
@@ -156,7 +156,7 @@ const about: About = {
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/betterlyrics/banner.png",
+            src: "https://github.com/jayfunc/BetterLyrics/blob/dev/Promotion/banner.png?raw=true",
             alt: "Project image",
             width: 16,
             height: 9,

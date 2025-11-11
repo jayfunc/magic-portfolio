@@ -3,7 +3,9 @@ title: "BetterLyrics"
 publishedAt: "2025-06-05"
 summary: "An elegant and deeply customizable lyrics & player app, built with WinUI3/Win2D"
 images:
-  - "/images/projects/betterlyrics/banner.png"
+  - "https://github.com/jayfunc/BetterLyrics/blob/dev/Promotion/banner.png?raw=true"
+  - "https://github.com/jayfunc/BetterLyrics/blob/dev/Screenshots/std.png?raw=true"
+  - "https://github.com/jayfunc/BetterLyrics/blob/dev/Screenshots/narrow.png?raw=true"
 team:
   - name: "Zhe Fang"
     role: ""
@@ -11,3 +13,94 @@ team:
     linkedIn: ""
 link: "https://github.com/jayfunc/BetterLyrics"
 ---
+
+# FAQ
+
+## 🤔 Where can I find the logs?
+`%LocalAppData%\Packages\37412.BetterLyrics_rd1g0rsrrtxw8\LocalCache\logs`
+
+## 🤔 Where can I find the lyrics cache?
+`%LocalAppData%\Packages\37412.BetterLyrics_rd1g0rsrrtxw8\LocalCache\lyrics`
+
+## 🤔 I cannot see any buttons.
+
+By default, the top command bar and the bottom command bar (playback control panel) are automatically hidden when your mouse is out of those areas. Just hover your mouse back to those areas to show them again.
+
+## 🤔 No music is playing now. What should I do?
+
+Some of the players need additional config, check it out [here](https://github.com/jayfunc/BetterLyrics/wiki/%5BEN%5D-Known-supported-music-players-(configuration-guidance)).
+
+## 🤔 How to add more modes?
+
+If this is the first time that you use this app, only the standard mode was initially added for you. To add more modes, follow the steps below:
+
+Settings -> Lyrics window manager -> Create from templates -> Fullscreen mode
+
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/PixPin_2025-10-24_18-06-32.gif?raw=true)
+
+## 🤔 How to switch modes?
+
+You can switch modes by pressing the default shortcuts `Ctrl + Alt + S` and then choosing one of the modes displayed on your screen. (Press `Escape` to close the choosing window)
+
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/PixPin_2025-10-24_18-07-45.gif?raw=true)
+
+## 🤔 How to move and resize the window? I cannot touch the window.
+
+If you are not able to select and move the window, make sure that you have both:
+
+- Disabled `Click-through` in `Advanced settings` in `Lyrics window manager`.
+- Selected **_other than_** `None` in `Draggable area` in `General` in `Lyrics window manager`.
+
+> Click-through ensure that all mouse activity will go through a pinned widget and straight to the underlying game or application - [Microsoft Learn](https://learn.microsoft.com/en-us/gaming/game-bar/guide/click-through)
+
+Alternatively, you can skip the steps above and directly adjust the window position and size in `General` in  `Lyrics window manager`. See the clip below.
+
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/PixPin_2025-10-25_09-08-47.gif?raw=true)
+
+## 🤔 How to install ".msixbundle" package? (for test package only)
+[See this doc](https://github.com/jayfunc/BetterLyrics/wiki/%5BEN%5D-How-to-install-.zip-package-(sideloadly))
+
+## 🤔 Lyrics are moving back and forth constantly.
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-08-22_14-59-53.png?raw=true)
+
+Go to Settings > Playback sources > Disable "Lyrics timeline sync" or increase "Lyrics timeline sync threshold"
+
+## 🤔 Wrong lyrics are shown.
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/image.png?raw=true)
+
+Open the search panel to manually search for the correct lyrics.
+
+## 🤔 Bottom command bar (playback control panel) is hidden?
+
+By default, the playback control panel at the bottom is hidden automatically when your mouse is out of that area. 
+
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-08-22_14-50-16.png?raw=true)
+
+But when the window size is too small to place that panel, only hovering over the bottom of the lyrics window and clicking on the white line can the playback control panel be displayed, or just right-click on the inner side of the window.
+
+# Known supported music players (configuration guidance)
+
+| Music Player | Plugin | Note |
+|---|---|---|
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/AIMP.png?raw=true" width="24"/> [AIMP](https://www.aimp.ru) | https://www.aimp.ru/?do=catalog&rec_id=1097 | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/AMLLPlayer.png?raw=true" width="24"/> [AMLL Player](https://github.com/Steve-xmh/applemusic-like-lyrics/blob/full-refractor/packages/player/README.md) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/AppleMusic.png?raw=true" width="24"/> [Apple Music](https://music.apple.com) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/Logo.png?raw=true" width="24"/> [BetterLyrics](https://github.com/jayfunc/BetterLyrics) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/foobar2000.png?raw=true" width="24"/> [foobar2000](https://www.foobar2000.org/windows) | https://github.com/dumbie/foo_mediacontrol | Timeline issue |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/Chrome.png?raw=true" width="24"/> [Google Chrome](https://www.google.com/chrome) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/HyPlayer.png?raw=true" width="24"/> [HyPlayer](https://github.com/HyPlayer/HyPlayer) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/iTunes.png?raw=true" width="24"/> [iTunes](https://apps.microsoft.com/detail/9pb2mz1zmb1s) | https://github.com/thewizrd/iTunes-SMTC | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/KugouMusic.png?raw=true" width="24"/> [酷狗音乐](https://www.kugou.com) | - | <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-11-01_12-51-44.png?raw=true" width="600"/> Timeline issue |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/Listen1.png?raw=true" width="24"/> [Listen 1](https://listen1.github.io/listen1) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/LXMusic.png?raw=true" width="24"/> [LX Music](https://github.com/lyswhut/lx-music-desktop) | - | Enabled "Open API" in LX Music. Input LX Music server address in "Playback sources" in BetterLyrics |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/Edge.png?raw=true" width="24"/> [Microsoft Edge](https://www.microsoft.com/edge) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/MoeKoeMusic.png?raw=true" width="24"/> [MoeKoe Music](https://github.com/MoeKoeMusic/MoeKoeMusic) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/MusicBee.png?raw=true" width="24"/> [MusicBee](https://getmusicbee.com) | https://github.com/HenryPDT/mb_MediaControl | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/PlanetMusic.png?raw=true" width="24"/> [PlanetMusic](https://apps.microsoft.com/detail/9nt5122pwqb8) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/PotPlayer.png?raw=true" width="24"/> [PotPlayer](https://potplayer.daum.net) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/QQMusic.png?raw=true" width="24"/> [QQ 音乐](https://y.qq.com) | - | Keep it at the latest version and enable "Show System Media Transport Controls (SMTC)" in QQ 音乐 settings |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/SaltPlayerForWindows.png?raw=true" width="24"/> [Salt Player for Windows](https://moriafly.com/program/spw.html) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/Spotify.png?raw=true" width="24"/> [Spotify](https://open.spotify.com) | - | - |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/NetEaseCloudMusic.png?raw=true" width="24"/> [网易云音乐](https://music.163.com) | https://microblock.cc/betterncm  https://github.com/apoint123/inflink-rs | <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-11-01_19-25-56.png?raw=true" width="600"/> |
+| <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/BetterLyrics.WinUI3/BetterLyrics.WinUI3/Assets/MediaPlayerWindows11.png?raw=true" width="24"/> [Windows Media Player](https://apps.microsoft.com/detail/9wzdncrfj3pt) | - |
+| - | - |
