@@ -17,9 +17,11 @@ link: "https://github.com/jayfunc/BetterLyrics"
 # FAQ
 
 ## 🤔 Where can I find the logs?
+
 `%LocalAppData%\Packages\37412.BetterLyrics_rd1g0rsrrtxw8\LocalCache\logs`
 
 ## 🤔 Where can I find the lyrics cache?
+
 `%LocalAppData%\Packages\37412.BetterLyrics_rd1g0rsrrtxw8\LocalCache\lyrics`
 
 ## 🤔 I cannot see any buttons.
@@ -28,7 +30,7 @@ By default, the top command bar and the bottom command bar (playback control pan
 
 ## 🤔 No music is playing now. What should I do?
 
-Some of the players need additional config, check it out [here](https://github.com/jayfunc/BetterLyrics/wiki/%5BEN%5D-Known-supported-music-players-(configuration-guidance)).
+Some of the players need additional config, check it out [here](#Lyrics-sources-configuration).
 
 ## 🤔 How to add more modes?
 
@@ -58,14 +60,17 @@ Alternatively, you can skip the steps above and directly adjust the window posit
 ![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/PixPin_2025-10-25_09-08-47.gif?raw=true)
 
 ## 🤔 How to install ".msixbundle" package? (for test package only)
-[See this doc](https://github.com/jayfunc/BetterLyrics/wiki/%5BEN%5D-How-to-install-.zip-package-(sideloadly))
+
+[See this doc](https://jayfunc.blog/blog/how-to-install-zip).
 
 ## 🤔 Lyrics are moving back and forth constantly.
+
 ![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-08-22_14-59-53.png?raw=true)
 
 Go to Settings > Playback sources > Disable "Lyrics timeline sync" or increase "Lyrics timeline sync threshold"
 
 ## 🤔 Wrong lyrics are shown.
+
 ![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/image.png?raw=true)
 
 Open the search panel to manually search for the correct lyrics.
@@ -78,3 +83,49 @@ By default, the playback control panel at the bottom is hidden automatically whe
 
 But when the window size is too small to place that panel, only hovering over the bottom of the lyrics window and clicking on the white line can the playback control panel be displayed, or just right-click on the inner side of the window.
 
+# Known supported music players (configuration guidance)
+
+<Table 
+  data={{
+    headers: [
+      { content: "Music player", key: "player", sortable: false },
+      { content: "Plugin", key: "plugin", sortable: false },
+      { content: "Note", key: "note", sortable: false }
+    ],
+    rows: [
+      [ <a href="https://www.aimp.ru">AIMP</a>, <a href="https://www.aimp.ru/?do=catalog&rec_id=1097">Plugin</a>, "-" ],
+      [ <a href="https://github.com/Steve-xmh/applemusic-like-lyrics/blob/full-refractor/packages/player/README.md">AMLL Player</a>, "-", "-" ],
+      [ <a href="https://music.apple.com">Apple Music</a>, "-", "-" ],
+      [ <a href="https://github.com/jayfunc/BetterLyrics">BetterLyrics</a>, "-", "-" ],
+      [ <a href="https://www.foobar2000.org/windows">foobar2000</a>, <a href="https://github.com/dumbie/foo_mediacontrol">Plugin</a>, "Timeline issue" ],
+      [ <a href="https://www.google.com/chrome">Google Chrome</a>, "-", "-" ],
+      [ <a href="https://github.com/HyPlayer/HyPlayer">HyPlayer</a>, "-", "-" ],
+      [ <a href="https://apps.microsoft.com/detail/9pb2mz1zmb1s">iTunes</a>, <a href="https://github.com/thewizrd/iTunes-SMTC">Plugin</a>, "-" ],
+      [ <a href="https://www.kugou.com">酷狗音乐</a>, "-", <><img src="https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-11-01_12-51-44.png?raw=true"/> Timeline issue</> ],
+      [ <a href="https://listen1.github.io/listen1">Listen 1</a>, "-", "-" ],
+      [ <a href="https://github.com/lyswhut/lx-music-desktop">LX Music</a>, "-", "Enabled \"Open API\" in LX Music. Input LX Music server address in \"Playback sources\" in BetterLyrics" ],
+      [ <a href="https://www.microsoft.com/edge">Microsoft Edge</a>, "-", "-" ],
+      [ <a href="https://github.com/MoeKoeMusic/MoeKoeMusic">MoeKoe Music</a>, "-", "-" ],
+      [ <a href="https://getmusicbee.com">MusicBee</a>, <a href="https://github.com/HenryPDT/mb_MediaControl">Plugin</a>, "-" ],
+      [ <a href="https://apps.microsoft.com/detail/9nt5122pwqb8">PlanetMusic</a>, "-", "-" ],
+      [ <a href="https://potplayer.daum.net">PotPlayer</a>, "-", "-" ],
+      [ <a href="https://y.qq.com">QQ 音乐</a>, "-", "Keep it at the latest version and enable \"Show System Media Transport Controls (SMTC)\" in QQ 音乐 settings" ],
+      [ <a href="https://moriafly.com/program/spw.html">Salt Player for Windows</a>, "-", "-" ],
+      [ <a href="https://open.spotify.com">Spotify</a>, "-", "-" ],
+      [ <a href="https://music.163.com">网易云音乐</a>, <><a href="https://microblock.cc/betterncm">BetterNCM</a> <a href="https://github.com/apoint123/inflink-rs">InfLink-rs</a></>, <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-11-01_19-25-56.png?raw=true"/> ],
+      [ <a href="https://apps.microsoft.com/detail/9wzdncrfj3pt">Windows Media Player</a>, "-", "-" ],
+      [ "-", "-", "-" ]
+    ]
+  }}
+/>
+
+# Lyrics sources configuration
+
+## Apple Music
+
+- Open [the Apple Music website](https://music.apple.com/) and the Developer Tools window.
+- Log in to your account.
+- Refresh the page.
+- Go back to the Developer Tools window, select "Fetch/XHR", select a request, find the `media-user-token` header in the request headers, and copy its value.
+- Open BetterLyrics and go to the "Playback sources" settings.
+- Paste the copied value into the `Apple Music media-user-token` setting and click the accept icon on the right.

@@ -1,0 +1,132 @@
+---
+title: "BetterLyrics"
+publishedAt: "2025-06-05"
+summary: "一款优雅且高度自定义的歌词/播放器应用，基于 WinUI3/Win2D 构建。"
+images:
+  - "https://github.com/jayfunc/BetterLyrics/blob/dev/Promotion/banner.png?raw=true"
+  - "https://github.com/jayfunc/BetterLyrics/blob/dev/Screenshots/std.png?raw=true"
+  - "https://github.com/jayfunc/BetterLyrics/blob/dev/Screenshots/narrow.png?raw=true"
+team:
+  - name: "Zhe Fang"
+    role: ""
+    avatar: "/images/avatar.png"
+    linkedIn: ""
+link: "https://github.com/jayfunc/BetterLyrics"
+---
+
+# 常见问题解答
+
+## 🤔 日志文件在哪里？
+
+`%LocalAppData%\Packages\37412.BetterLyrics_rd1g0rsrrtxw8\LocalCache\logs`
+
+## 🤔 歌词缓存在哪里？
+
+`%LocalAppData%\Packages\37412.BetterLyrics_rd1g0rsrrtxw8\LocalCache\lyrics`
+
+## 🤔 我看不到任何按钮。
+
+默认情况下，当鼠标移出顶部命令栏和底部命令栏（播放控制面板）区域时，它们会自动隐藏。只需将鼠标悬停在这些区域即可再次显示它们。
+
+## 🤔 现在没有音乐播放。我该怎么办？
+
+部分播放器需要额外配置，请查看[此处](#歌词源配置)。
+
+## 🤔 如何添加更多模式？
+
+如果您是首次使用此应用，则初始仅添加了标准模式。要添加更多模式，请按照以下步骤操作：
+
+设置 -> 歌词窗口管理器 -> 从模板创建 -> 全屏模式
+
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/PixPin_2025-10-24_18-06-32.gif?raw=true)
+
+## 🤔 如何切换模式？
+
+您可以通过按下默认快捷键 `Ctrl + Alt + S`，然后选择屏幕上显示的模式来切换模式。 （按“Esc”键关闭选择窗口）
+
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/PixPin_2025-10-24_18-07-45.gif?raw=true)
+
+## 🤔 如何移动和调整窗口大小？我无法点击窗口。
+
+如果您无法选择和移动窗口，请确保您已完成以下两项操作：
+
+- 在“歌词窗口管理器”的“高级设置”中禁用“点击穿透”。
+
+- 在“歌词窗口管理器”的“常规”设置中，将“可拖动区域”的选项设置为“无”以外的其他选项。
+
+> 点击穿透功能可确保所有鼠标活动都穿过固定的窗口部件，直接跳转到底层游戏或应用程序 - [Microsoft Learn](https://learn.microsoft.com/en-us/gaming/game-bar/guide/click-through)
+
+或者，您可以跳过上述步骤，直接在“歌词窗口管理器”的“常规”设置中调整窗口位置和大小。请参见下方视频片段。
+
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/PixPin_2025-10-25_09-08-47.gif?raw=true)
+
+## 🤔 如何安装“.msixbundle”包？（仅用于测试包）
+
+[请参阅此文档](https://jayfunc.blog/blog/how-to-install-zip-cn)
+
+## 🤔 歌词一直在来回移动。
+
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-08-22_14-59-53.png?raw=true)
+
+前往“设置”>“播放源”>禁用“歌词时间线同步”或提高“歌词时间线同步阈值”。
+
+## 🤔 显示错误的歌词。
+
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/image.png?raw=true)
+
+打开搜索面板手动搜索正确的歌词。
+
+## 🤔 底部命令栏（播放控制面板）隐藏了吗？
+
+默认情况下，当鼠标移出底部区域时，播放控制面板会自动隐藏。
+
+![](https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-08-22_14-50-16.png?raw=true)
+
+但是当窗口太小无法显示该面板时，只有将鼠标悬停在歌词窗口底部并单击白线，或者直接右键单击窗口内侧，才能显示播放控制面板。
+
+# 已知支持的音乐播放器（配置指南）
+
+<Table 
+  data={{
+    headers: [
+      { content: "音乐播放器", key: "player", sortable: false },
+      { content: "插件", key: "plugin", sortable: false },
+      { content: "注意事项", key: "note", sortable: false }
+    ],
+    rows: [
+      [ <a href="https://www.aimp.ru">AIMP</a>, <a href="https://www.aimp.ru/?do=catalog&rec_id=1097">Plugin</a>, "-" ],
+      [ <a href="https://github.com/Steve-xmh/applemusic-like-lyrics/blob/full-refractor/packages/player/README.md">AMLL Player</a>, "-", "-" ],
+      [ <a href="https://music.apple.com">Apple Music</a>, "-", "-" ],
+      [ <a href="https://github.com/jayfunc/BetterLyrics">BetterLyrics</a>, "-", "-" ],
+      [ <a href="https://www.foobar2000.org/windows">foobar2000</a>, <a href="https://github.com/dumbie/foo_mediacontrol">Plugin</a>, "时间线有问题" ],
+      [ <a href="https://www.google.com/chrome">Google Chrome</a>, "-", "-" ],
+      [ <a href="https://github.com/HyPlayer/HyPlayer">HyPlayer</a>, "-", "-" ],
+      [ <a href="https://apps.microsoft.com/detail/9pb2mz1zmb1s">iTunes</a>, <a href="https://github.com/thewizrd/iTunes-SMTC">Plugin</a>, "-" ],
+      [ <a href="https://www.kugou.com">酷狗音乐</a>, "-", <><img src="https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-11-01_12-51-44.png?raw=true"/> 时间线有问题</> ],
+      [ <a href="https://listen1.github.io/listen1">Listen 1</a>, "-", "-" ],
+      [ <a href="https://github.com/lyswhut/lx-music-desktop">LX Music</a>, "-", <>在 LX Music 设置 “开放 API” 中勾选 “启用开放 API 服务”；<br/>在 BetterLyrics 设置 “播放源” 板块下的 “LX 音乐服务器” 中输入 LX Music 服务器地址。</> ],
+      [ <a href="https://www.microsoft.com/edge">Microsoft Edge</a>, "-", "-" ],
+      [ <a href="https://github.com/MoeKoeMusic/MoeKoeMusic">MoeKoe Music</a>, "-", "-" ],
+      [ <a href="https://getmusicbee.com">MusicBee</a>, <a href="https://github.com/HenryPDT/mb_MediaControl">Plugin</a>, "-" ],
+      [ <a href="https://apps.microsoft.com/detail/9nt5122pwqb8">PlanetMusic</a>, "-", "-" ],
+      [ <a href="https://potplayer.daum.net">PotPlayer</a>, "-", "-" ],
+      [ <a href="https://y.qq.com">QQ 音乐</a>, "-", "确保使用较新版本，并在 QQ 音乐设置中启用 “显示系统媒体传输控制 (SMTC)”。" ],
+      [ <a href="https://moriafly.com/program/spw.html">Salt Player for Windows</a>, "-", "-" ],
+      [ <a href="https://open.spotify.com">Spotify</a>, "-", "-" ],
+      [ <a href="https://music.163.com">网易云音乐</a>, <><a href="https://microblock.cc/betterncm">BetterNCM</a> <a href="https://github.com/apoint123/inflink-rs">InfLink-rs</a></>, <img src="https://github.com/jayfunc/BetterLyrics/blob/dev/FAQ/Snipaste_2025-11-01_19-25-56.png?raw=true"/> ],
+      [ <a href="https://apps.microsoft.com/detail/9wzdncrfj3pt">Windows Media Player</a>, "-", "-" ],
+      [ "-", "-", "-" ]
+    ]
+  }}
+/>
+
+# 歌词源配置
+
+## Apple Music
+
+- 打开 [Apple Music 网站](https://music.apple.com/) 和开发者工具窗口。
+- 登录您的帐户。
+- 刷新页面。
+- 返回开发者工具窗口，选择“Fetch/XHR”，选择一个请求，在请求头中找到 `media-user-token` 标头，并复制其值。
+- 打开 BetterLyrics 并转到“播放源”设置。
+- 将复制的值输入到 `Apple Music media-user-token` 设置中，然后点击右侧的接受图标。
