@@ -234,5 +234,7 @@ export interface Gallery extends BasePageConfig {
     alt: string;
     /** Image orientation (horizontal/vertical) */
     orientation: string;
+    /** Date associated with the image */
+    date: string;
   }>;
 }
