@@ -1,12 +1,18 @@
 "use client";
 
 import {
+  Avatar,
   AvatarGroup,
+  Card,
   Carousel,
   Column,
   Flex,
   Heading,
+  Icon,
+  Media,
+  Row,
   SmartLink,
+  Tag,
   Text,
 } from "@once-ui-system/core";
 
@@ -19,6 +25,8 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  date: string;
+  technologies: string[];
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -29,39 +37,74 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  date,
+  technologies,
 }) => {
   return (
-    <Column fillWidth gap="m">
+    <Card
+      fillWidth
+      radius="l-4"
+      direction="column"
+      border="neutral-alpha-medium"
+    >
+      <Row fillWidth paddingX="m" paddingY="12" gap="s" vertical="center">
+        {avatars?.length > 0 && (
+          <AvatarGroup
+            gap="8"
+            vertical="center"
+            avatars={avatars}
+            size="m"
+            reverse
+          />
+        )}
+        <Text style={{ whiteSpace: 'nowrap', flexShrink: 0 }} variant="label-default-s">{date}</Text>
+        {technologies?.length > 0 && (
+          <Flex fillWidth horizontal="end" gap="8" wrap>
+            {technologies.map((tech) =>
+              tech == "Windows" || tech == "Android" || tech == "Browser" ? (
+                <Icon size="s" key={tech} name={tech.toLowerCase()} />
+              ) : (
+                <Tag key={tech} variant="brand">
+                  {tech}
+                </Tag>
+              )
+            )}
+          </Flex>
+        )}
+      </Row>
       <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
+        sizes="(max-width: 560px) 100vw, 560px"
         items={images.map((image) => ({
-          slide: image,
+          slide: <Media src={image} alt={title} aspectRatio="16 / 9" />,
           alt: title,
         }))}
       />
+      <Column fillWidth paddingX="m" paddingY="24" gap="8">
+        {title && (
+          <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+            {title}
+          </Heading>
+        )}
+        {description?.trim() && (
+          <Text
+            wrap="balance"
+            variant="body-default-s"
+            onBackground="neutral-weak"
+          >
+            {description}
+          </Text>
+        )}
+      </Column>
       <Flex
         s={{ direction: "column" }}
         fillWidth
-        paddingX="s"
+        paddingX="m"
         paddingTop="12"
         paddingBottom="24"
         gap="l"
       >
-        {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
-          </Flex>
-        )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
+        {(description?.trim() || content?.trim()) && (
           <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
             <Flex gap="24" wrap>
               {content?.trim() && (
                 <SmartLink
@@ -69,7 +112,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={href}
                 >
-                  <Text variant="body-default-s">Read more about this project</Text>
+                  <Text variant="body-default-s">
+                    Read more about this project
+                  </Text>
                 </SmartLink>
               )}
               {link && (
@@ -85,6 +130,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </Column>
         )}
       </Flex>
-    </Column>
+    </Card>
   );
 };
